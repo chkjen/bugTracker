@@ -1,0 +1,24 @@
+doctype html
+html
+    head
+        title=title
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
+        script(src='https://cdn.auth0.com/js/auth0/9.11/auth0.min.js')
+    body
+        nav.container.navbar.navbar-expand-lg.navbar-light.bg-light
+            a.navbar-brand Bug Tracker
+            div.collapse.navbar-collapse
+                ul.navbar-nav
+                    li.nav-item
+                        a(href='/').nav-link Home
+                    if loggedIn
+                        li.nav-item
+                            a(href='/user').nav-link Profile
+                        li.nav-item
+                            a(href='/loggout').nav-link Log Out
+                    else
+                        li.nav-item
+                            a(href="/login").nav-link Log In    
+                    
+
+    block content
